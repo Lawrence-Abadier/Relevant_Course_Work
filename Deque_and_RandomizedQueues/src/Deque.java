@@ -1,11 +1,13 @@
-import java.util.Iterator; 
-
 /**
  * @author Lawrence Abadier
  * @version 1.0
  * @date 02/02/2015
  * 
  */
+
+import java.util.Iterator; 
+
+
 public class Deque<Item> implements Iterable<Item> {
    private int size;  // The number of elements in our deque
    private Node first; // The first element in our deque
@@ -176,21 +178,29 @@ public class Deque<Item> implements Iterable<Item> {
    }
 
    public static void main(String[] args) { // unit testing
-      Deque<Integer> test = new Deque<Integer>(); 
+      Deque<Integer> test = new Deque<Integer>();
 
-      test.removeLast(); 
-      test.addFirst(2); 
-      test.addFirst(3); 
-      test.addFirst(4); 
-      test.addLast(20); 
-      test.addFirst(22); 
-      test.addLast(44); 
-      test.removeLast(); 
-      test.removeFirst(); 
+      for (int i = 0; i < 500; i++) {
+         int rand = StdRandom.uniform(test.size());
+         if (StdRandom.bernoulli())
+            test.addFirst(rand);
+         else
+            test.addLast(rand);
+      }
+      
+      test.removeLast();
+      test.addFirst(2);
+      test.addFirst(3);
+      test.addFirst(4);
+      test.addLast(20);
+      test.addFirst(22);
+      test.addLast(44);
+      test.removeLast();
+      test.removeFirst();
 
       while (test.iterator().hasNext()) {
-         test.removeLast(); 
+         test.removeLast();
       }
-      StdOut.println("Done"); 
+      StdOut.println("Done");
    }
 }

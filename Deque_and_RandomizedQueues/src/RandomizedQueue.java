@@ -1,12 +1,13 @@
-import java.util.Iterator;  
-import java.util.NoSuchElementException;  
-
 /**
  * @author Lawrence Abadier
  * @version 1.0
  * @date 02/02/2015
  * 
  */
+
+import java.util.Iterator;  
+import java.util.NoSuchElementException;  
+
 public class RandomizedQueue<Item> implements Iterable<Item> {
    private int size = 0;   // The starting size of the array
    private Item[] queue;  

@@ -1,13 +1,10 @@
 /**
- * 
- */
-
-/**
  * @author Lawrence Abadier
  * @version 1.0
  * @date 02/02/2015
  * 
  */
+
 public class Subset {
 
    /**
